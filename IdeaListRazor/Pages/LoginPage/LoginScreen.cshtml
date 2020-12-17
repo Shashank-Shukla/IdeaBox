@@ -1,0 +1,46 @@
+﻿@page
+@model IdeaListRazor.Pages.Login.LoginScreenModel
+@{
+    ViewData["Title"] = "Login Page";
+}
+<br />
+<u><h2 style="text-align: center; font-family: 'Lucida Console'">Login</h2></u>
+<div>
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="p-4" style="text-align: right; margin: 0 20%;">
+            <table class="table table-borderless table-lg p-4 col-11">
+                <hr />
+                <tr class="col-2">
+                    <td>
+                        <h5>User ID </h5>
+                    </td>
+                    <td>
+                        <input asp-for="Emps.EmpID" class="form-control" />
+                    </td>
+                </tr>
+                <tr class="col-2">
+                    <td>
+                        <h5>UserName  </h5>
+                    </td>
+                    <td>
+                        <input asp-for="Emps.EmpName" class="form-control" placeholder="Enter Username" />
+                    </td>
+                    <span asp-validation-for="Emps.EmpName">Please Enter the username</span>
+                </tr>
+                <tr class="col-2">
+                    <td>
+                        <h5>Password  </h5>
+                    </td>
+                    <td>
+                        <input asp-for="Emps.PassWd" class="form-control" type="password" placeholder="Enter Password" />
+                    </td>
+                    <span asp-validation-for="Emps.PassWd">Password is a  necessary field.</span>
+                </tr>
+            </table>
+        </div>
+        <div style="text-align: center; margin: 0 20%;">
+            <button class="btn btn-outline-success" style="border-radius:50%; width: 100px; height: 75px; font-family: Arial" type="submit">Log Me In</button>
+        </div>
+    </form>
+</div>
